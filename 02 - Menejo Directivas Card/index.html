@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <h1>Control de Card con Vue</h1>
+    <div id="container">
+      <div class="row">
+        Agregar titulo:<input type="text" name="nuevoMensaje" id="nuevoMensaje" v-model="nuevoMensaje"><br>
+        Agregar contenido:<input type="text" name="nuevoContenido" id="nuevoContenido" v-model="nuevoContenido"><br>
+        Agregar estado:<input type="text" name="nuevoEstado" id="nuevoEstado" v-model="nuevoEstado"><br>
+        Agregar costo:<input type="number" name="nuevoCosto" id="nuevoCosto" v-model="nuevoCosto"><br>
+        <button class="btn btn-danger" @click="mensajeMetodo">Agregar</button>
+      </div>
+      
+        <div class="card" style="width: 18rem;" v-for="cod of mensaje">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{cod.titulo}}
+            </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                {{cod.contenido}}
+              </h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">
+                {{cod.estado}}
+              </a>
+              <a href="#" class="card-link">{{cod.costo}}</a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
